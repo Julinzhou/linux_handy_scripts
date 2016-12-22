@@ -1,0 +1,12 @@
+在systemd配置命令行tty1自动登录(适用ubuntu 16.04以后的版本和opensuse系列)：
+
+编辑文件：
+/etc/systemd/system/getty.target.wants/getty@tty1.service
+
+将其中
+ExecStart=-/sbin/agetty --noclear %I $TERM
+
+改为
+ExecStart=-/sbin/agetty -a snake3342 --noclear %I $TERM
+
+则自动登录snake3342账号

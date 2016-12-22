@@ -1,0 +1,4 @@
+#将一个已有用户 cnzhx 增加到一个已有用户组 apache 中
+usermod -a -G apache cnzhx
+
+sudo usermod -a -G docker xunquant

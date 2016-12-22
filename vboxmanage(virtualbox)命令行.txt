@@ -1,0 +1,32 @@
+#查看vbox版本
+vboxmanage --version
+
+#安装扩展包sudo
+VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.26-108824.vbox-extpack
+
+#导入虚拟机文件，并指定虚拟机名称，最原始的虚拟机镜像一启动时IP为201，计算机名为windows-origin，进去以后改计算机名，改指定IP地址，从200向下改
+VBoxManage import ./windows7_clean.ova --vsys 0 --vmname windows_badi
+
+#列出目前的所有虚拟机
+VBoxManage list vms
+
+#列出目前的所有在运行的虚拟机
+VBoxManage list runningvms
+
+#列出目前所有虚拟机的所有配置
+VBoxManage list vms --long
+
+#虚拟机改名
+vboxmanage modifyvm windows_1st –name win7_clone
+
+#虚拟机无界面启动
+VBoxManage startvm "windows_qa" --type headless
+
+#虚拟机关机
+VBoxManage controlvm windows_1st poweroff
+
+#虚拟机更改网络模式为桥接(只有本机创建的虚拟机可以在本机使用桥接，换到其他机器上会网卡驱动不匹配，除非型号和操作系统相同)
+VBoxManage modifyvm windows_1st --nic1 bridged
+
+#虚拟机导出
+vboxmanage export windows_qa(虚拟机名称) -o ~/vm_machines/clean_images/windows7_clean.ova

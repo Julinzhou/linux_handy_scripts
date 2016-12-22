@@ -1,0 +1,26 @@
+在linux mint安装cuda和pycuda的步骤：
+
+安装前的条件：
+1.已经安装了anaconda版的python
+2.进入anaconda的bin文件夹，运行conda install gcc，如果说不认识conda命令，那就是你环境变量里面没有添加anaconda的bin文件夹，你用sudo安装那就要去/root用户文件夹里面的.profile添加这个环境变量，如果你用本用户的权限来安装，那就在本用户的/home/用户名/文件夹下的.profile添加
+3.如果你用本用户名的权限安装，报错提示权限不够的话，就使用sudo权限来执行，总之anaconda本身要把gcc装上，anaconda之外linux自带的gcc，anaconda是找不到的。
+
+接下来
+1.去英伟达官网下载cuda的ubuntu的deb安装包，选择14.04版本
+2.点击它安装，相当于你添加了英伟达的软件源
+3.然后在命令行里面update刷新软件源，或者在软件源管理界面点刷新都可以
+4.然后你会在新立得里面看到cuda，但是我不太建议在新立得里面安装，因为mint中国版不知道哪个软件源里面还带了一个叫cuda toolkit的，它会给你自动装上340版本的英伟达驱动，我用那个版本的驱动会黑屏，所以我是直接在命令行里面sudo apt-get install cuda
+
+5.linux 安装cuda以后的环境变量，其中cuda-7.5这个文件夹名称要按照你具体安装的版本来修改，其他应该短时间内不会变，总之就是bin文件夹，lib文件夹，以及cuda_root。环境变量添加的位置还是如之前配置conda的环境变量时一样
+
+PATH="/usr/local/cuda-7.5/bin:$PATH"
+LD_LIBRARY_PATH="/usr/local/cuda-7.5/lib64:$LD_LIBRARY_PATH"
+CUDA_ROOT="/usr/local/cuda-7.5"
+
+如果只是安装cuda，就到此结束。如果还要安装pycuda，再看下面。
+
+进入anaconda的bin文件夹，执行pip --version，确定你接下来在这里用到的pip是本文件夹的，如果你在安装过程中报错说没有权限，那就使用sudo pip，使用之前也要sudo pip --version确认用到的pip真的是anaconda文件夹里面的pip，如果不是那就去添加环境变量。
+
+pip install pycuda，或者前面加上sudo权限，如果之前你的gcc和pycuda都安装好了，这里应该就没有问题了，最后会successful。
+
+

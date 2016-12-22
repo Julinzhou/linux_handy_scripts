@@ -1,0 +1,2 @@
+docker stop ladder_container
+docker rm ladder_container

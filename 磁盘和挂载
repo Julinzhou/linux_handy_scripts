@@ -1,0 +1,1 @@
+使用gnome-disk挂载ext4分区时，一定要注意，默认的x-gvfs-show选项必须改成comment=x-gvfs-show，如果没有更改，但是又设置成启动时自动挂载，就会在启动时死活挂载不上。

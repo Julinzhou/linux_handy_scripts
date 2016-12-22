@@ -1,0 +1,8 @@
+ #禁止chromium启动询问kwallet
+ 
+ ~/.kde4/share/config/kwalletrc
+ 
+加入 
+
+[Auto Deny]
+kdewallet=Chromium

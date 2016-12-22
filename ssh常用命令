@@ -1,0 +1,9 @@
+#创建ssh秘钥，输出路径在~/.ssh/
+ssh-keygen -t rsa -C "snake3342@qq.com"
+
+# ssh 配置文件路径
+ubuntu/mint:
+/etc/ssh/sshd_config
+#允许root登录
+PermitRootLogin yes
+

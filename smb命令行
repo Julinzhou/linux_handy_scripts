@@ -1,0 +1,19 @@
+/etc/samba/
+默认smb路径
+
+查看samba服务的状态
+service smb status
+
+smb.conf必须的选项有
+[global]
+encrypt passwords = yes
+smb passwd file = /etc/samba/smbpasswd
+
+改写之后先重启服务
+
+samba服务重启
+service smb restart
+
+然后添加账户
+smbpasswd -a 账户名
+其中账户名要和系统账户中的smb对应账户一致

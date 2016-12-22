@@ -1,0 +1,11 @@
+:<<'
+创建登录后自动执行的脚本
+mkdir ~/scripts
+cp ./startup_actions ~/scripts/
+'
+
+:<<'
+将以下这行加入~/.profile文件(一定不能加入.bashrc，因为每次启动bash或者sh命令行都会执行一次.bashrc)，则登录时自动执行startup_actions
+bash ~/scripts/startup_actions
+'
+

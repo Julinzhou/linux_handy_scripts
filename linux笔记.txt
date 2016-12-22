@@ -1,0 +1,26 @@
+多行注释
+:<< '
+....被注释的多行内容
+'
+
+
+关机快捷方式：
+sudo chmod u+s /sbin/shutdown
+然后添加启动器命令：shutdown now
+
+
+查看当前显卡驱动：
+sudo lshw -c video | grep configuration
+
+chrome://flags/，谷歌浏览器高级设置，其中保存mht在这里设定
+
+查看当前用户id：echo $UID
+
+chmod 4755 某程序，使执行某程序的其他用户在此进程内暂时性具有root权限
+
+ntfs分区挂载选项举例：
+-o 后面设定uid为所有者，exec可执行，代码页设定内码，936是windows的gb2312，字符集设定字符集
+
+mount -t ntfs /dev/sdb1 /media/snake3342/gut -o uid=1000,exec,user,codepage=936,iocharset=gb18030
+
+使用gnome-disk挂载ext4分区时，一定要注意，默认的x-gvfs-show选项必须改成comment=x-gvfs-show，如果没有更改，但是又设置成启动时自动挂载，就会在启动时死活挂载不上。

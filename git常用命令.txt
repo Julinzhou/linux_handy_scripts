@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+
+#初次使用git前必须配置用户名和邮箱：
+编辑或者创建git的config文件：~/.gitconfig，内容：
+
+[user]
+	name = snake3342
+	email = snake3342@qq.com
+
+或者命令行：
+git config --global user.name "snake3342"
+git config --global user.email "snake3342@qq.com"
+
+fish_quant https://github.com/snake3342/fish_quant.git
+
+#进入本地的带git的文件夹(本地仓库)，执行下面这一行，关联远程的git
+git remote add origin git@github.com:snake3342/fish_quant.git
+
+#在本地git仓库文件夹内执行下面这一行，将更改过的文件提交到本地暂存区
+git add .
+
+#在本地git仓库文件夹内执行下面这一行，将本地暂存区作为确定版本，提交到本地的repository
+git commit -m "本次修改的说明"
+
+添加远程分支
+git remote add origin git@github.com:snake3342/matlab_ctp_md_td.git
+https://github.com/xunquant/temperary.git
+
+#取来远程分支
+git branch origin/gateway_branch

@@ -1,0 +1,63 @@
+#启用root，并设置密码
+sudo passwd root
+
+#亮度，图形界面使用此工具来调节，其后台为命令行方式调用xrandr
+add-apt-repository ppa:apandada1/brightness-controller
+
+#直接使用xrandr设置，格式为：monitor name, brightness , gamma，每次登录进入.profile执行
+xrandr --output eDP --brightness 0.5 --gamma 1.0:1.0:1.0
+
+
+#pycharm
+apt-add-repository ppa:mystic-mirage/pycharm -y
+
+#remmina，-y非交互模式
+add-apt-repository ppa:remmina-ppa-team/remmina-next -y
+
+#notepadqq
+add-apt-repository ppa:notepadqq-team/notepadqq -y
+
+apt install smplayer wine ttf-mscorefonts-installer virtualbox virtualbox-qt chromium-browser chromium-browser-l10n gparted docker.io wine winetricks git font-manager filezilla gcc make apt-file uget aria2
+
+apt install pycharm-community notepadqq remmina remmina-plugin-rdp
+
+#数字键默认开启，要先安装numlockxon
+sudo apt-get install numlockx
+#然后每次启动执行
+/usr/bin/numlockx on
+
+
+#快捷键设置，配置文件
+～/.config/openbox/lubuntu-rc.xml
+
+#以如下方法修改以后，要立即生效，命令行执行：
+openbox --reconfigure
+
+#设置锁定快捷键，在以上配置文件中搜索"lock"，更改
+<!-- Lock the screen on Ctrl + Alt + l-->
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>lxsession-default lock</command>
+      </action>
+#改后配置:
+<!-- Lock the screen on Ctrl + Alt + l-->
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>lxsession-default lock</command>
+      </action>
+	  
+#设置win键开始菜单，原配置：
+<!-- Keybindings for running Menu from Lxpanel -->
+    <keybind key="A-F1">
+      <action name="Execute">
+        <command>lxpanelctl menu</command>
+      </action>
+    </keybind>
+#改后配置，左win键为例
+<!-- Keybindings for running Menu from Lxpanel -->
+    <keybind key="Super_L">
+      <action name="Execute">
+        <command>lxpanelctl menu</command>
+      </action>
+    </keybind>
+

@@ -1,0 +1,5 @@
+apt-add-repository ppa:mystic-mirage/pycharm
+
+apt-get install smplayer wine ttf-mscorefonts-installer virtualbox chromium-browser chromium-browser-l10n gparted pycharm-community
+
+

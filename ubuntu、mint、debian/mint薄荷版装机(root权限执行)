@@ -1,0 +1,9 @@
+apt-add-repository ppa:mystic-mirage/pycharm
+apt-add-repository ppa:remmina-ppa-team/remmina-next
+add-apt-repository ppa:notepadqq-team/notepadqq
+
+apt-get update
+apt-get install smplayer wine ttf-mscorefonts-installer virtualbox virtualbox-qt chromium-browser chromium-browser-l10n gparted docker.io wine winetricks git font-manager filezilla
+
+apt-get install pycharm-community notepadqq remmina remmina-plugin-rdp
+

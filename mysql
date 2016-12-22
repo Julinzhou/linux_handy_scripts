@@ -1,0 +1,5 @@
+#启动mysql的docker容器，默认管理员账号root，密码123456，完整命令：
+docker run -p 3306:3306 --name mysql_quant_data -v $PWD/conf/my.cnf:/etc/mysql/my.cnf -v $PWD/logs:/logs -v $PWD/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6
+
+#实用例子，不把数据挂载出来
+docker run -p 3306:3306 --name mysql_quant_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest

@@ -1,0 +1,7 @@
+删除有内容の文件夹
+rm -rf dirname
+
+创建软链接
+ln- s 原始文件夹不带尾斜杠の路径 镜像软链接绝对路径全名称
+比如
+ln- s /var/lib/docker /mnt/vm_machines/docker

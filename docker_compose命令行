@@ -1,0 +1,10 @@
+#安装docker-compose:
+mint/ubuntu:
+apt install docker-compose
+
+#如果要使用bash自动完成(多半情况下ubuntu自带)
+apt install bash-completion
+
+#在安装好docker-compose和自动完成也已经配置好的情况下，下载自动完成信息
+curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+

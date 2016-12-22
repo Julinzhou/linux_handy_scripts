@@ -1,0 +1,39 @@
+ubuntu,debian系列笔记：
+
+要安装的软件列表
+gdebi synaptic python-software-properties samba gimp chromium-browser uget aria2 ttf-mscorefonts-installer virtualbox filezilla
+
+添加 ppa以后可以安装：
+pycharm-community cinnamon nemo-share
+
+常用PPA软件源：
+英伟达显卡驱动
+ppa:graphics-drivers/ppa
+ppa:xorg-edgers/ppa
+
+pycharm
+ppa:mystic-mirage/pycharm
+
+
+sudo apt-add-repository
+Y PPA manager
+ppa:webupd8team/y-ppa-manager
+
+cinnamon界面
+ppa:embrosyn/cinnamon
+
+cinnamon的文件管理器nemo的ppa：
+ppa:webupd8team/nemo
+要安装nemo-share才能使用samba共享文件夹
+
+深度软件的PPA源
+ppa:linux-deepin-team/linux-deepin
+
+python-software-properties package
+sudo add-apt-repository
+
+给mint或者ubuntu添加无线连接，改AP的地方
+/etc/NetworkManager/system-connections/
+'
+深度QQ repo
+http://packages.linuxdeepin.com/deepin/pool/non-free/d/deepinwine-qq/

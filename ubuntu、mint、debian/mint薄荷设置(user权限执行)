@@ -1,0 +1,2 @@
+mkdir ~/bin
+touch ~/bin/startup_script.sh

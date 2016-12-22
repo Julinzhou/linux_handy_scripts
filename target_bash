@@ -1,0 +1,7 @@
+echo 5
+script_parrent_path=$(cd "$(dirname "$0")"; pwd)
+echo ${script_parrent_path}
+
+echo 6
+relative_pathname=$(basename $script_parrent_path)
+echo ${relative_pathname}

@@ -1,0 +1,8 @@
+#系统字体文件路径，把新字体拷贝到这里
+/usr/share/fonts/
+
+#更改字体权限，使得其他用户也可以使用
+sudo chmod 755 /usr/share/fonts/truetype/ubuntu-font-family-0.80/ -R
+
+#刷新字体缓存，其他用户也可以
+fc-cache -f -v

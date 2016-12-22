@@ -1,0 +1,9 @@
+conda config --set ssl_verify false#关闭ssl验证选项
+conda config add channel#把anaconda.org里面用户channel的repository加入包搜索列表
+
+#添加清华金枪鱼conda镜像
+conda config --add channels "https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/"
+conda config --set show_channel_urls yes
+
+#删除默认源
+conda config --remove channels "defaults" --force

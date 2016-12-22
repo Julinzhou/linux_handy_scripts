@@ -1,0 +1,78 @@
+启动docker服务进程
+opensuse:
+systemctl start docker.service
+
+mint:
+service docker start
+
+设定docker开机自动启动
+sudo systemctl enable docker
+
+查看状态
+opensuse:
+systemctl status docker.service
+
+mint:
+service docker status
+
+停止docker服务进程
+opensuse:
+systemctl stop docker.service
+mint:
+service docker stop
+
+重启docker进程
+opensuse:
+systemctl restart docker
+
+mint:
+service docker restart
+
+docker配置文件路径
+opensuse:
+/etc/sysconfig/docker
+
+mint:
+/etc/default/docker
+
+在配置文件中增加阿里云镜像加速：
+DOCKER_OPTS="--registry-mirror=https://32i70i44.mirror.aliyuncs.com"
+
+我的专属阿里云镜像加速器地址：
+https://32i70i44.mirror.aliyuncs.com
+
+在云控制台先创建同名的repository，比如下面的anaconda_env就是repo名称
+
+推送镜像时，先登录
+docker login --username=snake3342@qq.com registry.aliyuncs.com
+密码：ysfsbym121208
+
+再tag
+docker tag some-image registry.aliyuncs.com/snake3342/anaconda_env
+然后再上传到阿里云
+docker push registry.aliyuncs.com/snake3342/anaconda_env
+
+默认镜像文件夹
+/var/lib/docker
+
+#删除所有已经停止的docker容器
+docker rm $(docker ps -a -q)
+
+#删除所有镜像
+docker rmi $(docker images -q)
+
+#查看容器内的root密码
+docker logs <juyuan_manager_front> 2>&1 | grep '^User: ' | tail -n1
+
+docker run
+-it		#前台启动控制台
+--name "testing" #容器起名字
+--rm=true 		#退出以后自我删除
+-v ./to_mount:/mounted	#挂载外面的文件夹进到里面去
+snake3342/docker_base_pack		#镜像名称
+python app.py		#目标程序
+
+docker run -it --name "testing" --rm=true -v ./to_mount:/mounted opensuse_aliyun:latest mysqld /mounted/my.cnf
+docker run -it --name "testing" --net="host" -p 8180:8180 opensuse_miniconda bash
+docker run -it --name "juyuan_manager_front" --net="host" -p 8180:8180 test_image bash
+docker run -d --name "juyuan_manager_front" --net="host" -p 8180:8180 juyuan_manager
